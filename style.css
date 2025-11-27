@@ -1,311 +1,84 @@
-/*--- CSS Reset & Fonts ---*/
-*,
-*::before, *::after {
+body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-}
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: 'Comic Sans MS', 'Comic Neue', 'Fredoka', 'Kalam', cursive, Arial, sans-serif;
-  background: #fff;
-  color: #272c2d;
-  min-height: 100vh;
-  position: relative;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(180deg, #ffd8f0, #c6e8ff);
+  text-align: center;
   overflow-x: hidden;
 }
 
-/*--- Hero Background ---*/
-.hero-bg {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-  overflow: hidden;
-  pointer-events: none;
-}
-.lizard-layer {
-  position: absolute;
-  width: 40vw;
-  max-width: 450px;
-  height: 40vw;
-  max-height: 450px;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-  opacity: 0.90;
-  filter: drop-shadow(0 8px 32px rgba(0,0,0,0.08));
-  transition: opacity .3s;
-}
-.lizard-3 {
-  background-image: url('assets/3lizard.png');
-  left: 50%; top: 40%;
-  transform: translate(-50%, -50%) rotate(0deg);
-  z-index: 5;
-  animation: rotate-main 20s linear infinite, float-main 7s ease-in-out infinite;
-}
-.lizard-4 {
-  background-image: url('assets/4lizard.png');
-  left: 65%; top: 60%;
-  z-index: 3;
-  opacity: 0.60;
-  animation: rotate-secondary 36s linear infinite, float-secondary 8s ease-in-out infinite;
-}
-.lizard-1 {
-  background-image: url('assets/1lizard.png');
-  left: 35%; top: 55%;
-  z-index: 2;
-  opacity: 0.35;
-  animation: rotate-random1 41s linear infinite, float-random 9s ease-in-out infinite;
-}
-.lizard-2 {
-  background-image: url('assets/2lizard.png');
-  left: 67%; top: 25%;
-  z-index: 1;
-  opacity: 0.30;
-  animation: rotate-random2 37s linear infinite, float-random 11s ease-in-out infinite;
-}
-.lizard-5 {
-  background-image: url('assets/5lizard.png');
-  left: 22%; top: 73%;
-  z-index: 1;
-  opacity: 0.22;
-  animation: rotate-random3 43s linear infinite, float-random 10s ease-in-out infinite;
+h1 {
+  font-size: 4rem;
+  margin-top: 40px;
+  color: #111;
 }
 
-/*--- Animations (rotating, floating, pulsing) ---*/
-@keyframes rotate-main {
-  0% { transform: translate(-50%, -50%) rotate(0deg);}
-  50% { transform: translate(-50%, -50%) rotate(5deg);}
-  100% { transform: translate(-50%, -50%) rotate(0deg);}
-}
-@keyframes float-main {
-  0%, 100% {top: 40%;}
-  50% {top: 43%;}
-}
-@keyframes rotate-secondary {
-  0% {transform: rotate(-5deg);}
-  50% {transform: rotate(7deg);}
-  100% {transform: rotate(-5deg);}
-}
-@keyframes float-secondary {
-  0%,100% {top: 60%;}
-  50% {top:63%;}
-}
-@keyframes rotate-random1 {
-  0% {transform: rotate(-10deg);}
-  50% {transform: rotate(14deg);}
-  100% {transform: rotate(-10deg);}
-}
-@keyframes rotate-random2 {
-  0% {transform: rotate(7deg);}
-  50% {transform: rotate(-12deg);}
-  100% {transform: rotate(7deg);}
-}
-@keyframes rotate-random3 {
-  0% {transform: rotate(15deg);}
-  50% {transform: rotate(-7deg);}
-  100% {transform: rotate(15deg);}
-}
-@keyframes float-random {
-  0%,100% {transform: none;}
-  50% {transform: scale(1.04);}
-}
-
-/*--- HERO CONTENT ---*/
-.hero {
-  position: relative;
-  min-height: 96vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1;
-}
-.hero-content {
-  position: relative;
-  z-index: 9;
-  text-align: center;
-  padding: 5vh 6vw 0 6vw;
-  background: rgba(255,255,255,0.83);
-  border-radius: 36px;
-  box-shadow: 0 8px 52px 0 rgba(90,90,135,0.13), 0 1.5px 1.5px 0 rgba(50,48,72,0.05);
-  backdrop-filter: blur(3px);
-  animation: fadeInDown 1s cubic-bezier(.85,.5,.15,1.2);
-}
-
-.logo {
-  font-size: 6vw;
-  font-family: 'Fredoka', 'Comic Neue', 'Comic Sans MS', cursive;
-  color: #fff;
-  -webkit-text-stroke: 2px #353a46;
-  text-shadow: 0 12px 40px rgba(22,44,36,0.13);
-  font-weight: 900;
-  letter-spacing: .04em;
-  margin-bottom: 1vw;
-  animation: logo-pop 2s cubic-bezier(.7,.2,.1,1.4);
-}
-@keyframes logo-pop {
-  0% { transform: scale(.8); opacity:0; }
-  70% { transform: scale(1.06); opacity:1; }
-  100% { transform: scale(1); }
-}
 .subtitle {
-  font-size: 3vw;
-  color: #3e444a;
-  font-family: inherit;
-  font-weight: 700;
-  margin-bottom: 2vw;
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+  color: #333;
 }
 
-.hero-buttons {
-  display: flex;
-  gap: 2vw;
-  justify-content: center;
+.btns {
+  margin: 20px 0;
 }
+
 .btn {
-  padding: 1em 2em;
+  display: inline-block;
+  padding: 14px 28px;
+  margin: 10px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 14px;
+  text-decoration: none;
   background: #fff;
-  color: #3d4155;
-  font-size: 2vw;
-  font-family: inherit;
-  font-weight: 700;
-  border: none;
-  border-radius: 999px;
-  box-shadow: 0 4px 22px rgba(81,99,144,0.13);
-  cursor: pointer;
-  outline: none;
-  margin-top: 1vw;
-  letter-spacing: .03em;
-  transition: transform .2s cubic-bezier(.211,1.28,.55,1.06), box-shadow .22s cubic-bezier(.411,1.08,.55,1.06), background .18s, color .14s;
+  border: 3px solid #000;
+  color: #000;
+  transition: 0.2s;
 }
+
 .btn:hover {
-  transform: translateY(-10px) scale(1.06);
-  background: #f5f9fe;
-  color: #2ca37b;
-  box-shadow: 0 10px 32px rgba(44,160,110,.13), 0 3px 4px 0 rgba(54,118,92,0.07);
-}
-.btn.buy {
-  background: #ecf8f5;
-  color: #1a9a41;
-}
-.btn.buy:hover {
-  background: #e3f5e8;
-  color: #6d0bac;
+  transform: scale(1.06);
 }
 
-/*--- SLOGAN ---*/
-.slogan {
-  width: 100%;
-  text-align: center;
-  margin: 5vh 0 4vh 0;
-  padding: 2vw 8vw;
-  font-size: 2vw;
-  color: #fff;
-  font-family: 'Fredoka', 'Comic Neue', cursive;
-  text-shadow: 0 2px 36px rgba(22,43,72,0.2), 0 1px 2px #9bc5e1;
-  animation: fadeIn .9s ease-out 1s backwards;
-}
-@keyframes fadeInDown {
-  from {opacity:0; transform: translateY(-30px);}
-  to {opacity:1; transform: none;}
-}
-@keyframes fadeIn {
-  from {opacity:0;}
-  to {opacity:1;}
+.intro {
+  font-size: 1.5rem;
+  max-width: 800px;
+  margin: 30px auto;
 }
 
-/*--- FAQ / INFO SECTIONS ---*/
-.faq-section {
+.image-strip {
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  margin: 2vw auto 8vh auto;
-  width: 100%;
-  z-index: 3;
-}
-.faq-card {
-  background: #fff;
-  border-radius: 26px;
-  box-shadow: 0 6px 36px rgba(41,67,92,0.11), 0 1.5px 1.5px 0 rgba(50,48,72,0.04);
-  padding: 3vw 6vw;
-  max-width: 680px;
-  width: 90vw;
-  text-align: left;
-  margin: 0 auto;
-  font-family: inherit;
-  color: #293444;
-  animation: fadeInUp .8s cubic-bezier(.5,.9,.13,1.5) 1.2s backwards;
-}
-.faq-card h3 {
-  font-size: 2vw;
-  font-weight: 800;
-  color: #226477;
-  margin-bottom: .7em;
-  font-family: 'Comic Sans MS', 'Comic Neue', cursive;
-}
-.faq-card h4 {
-  font-size: 1.3vw;
-  color: #37907c;
-  font-weight: 600;
-  margin-bottom: 1em;
-}
-.faq-card p {
-  font-size: 1.2vw;
-  color: #284259;
-  line-height: 1.78;
-  margin-bottom: 0;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
 }
 
-@keyframes fadeInUp {
-  from {opacity:0; transform: translateY(38px);}
-  to {opacity:1; transform: none;}
+.image-strip img {
+  width: 350px;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.2);
+  transition: 0.3s;
 }
 
-.ending {
-  width: 100%;
-  text-align: center;
-  padding: 5vw 0 8vw 0;
-  color: #fff;
-  font-family: 'Fredoka', 'Comic Neue', cursive;
-  font-size: 1.6vw;
-  text-shadow: 0 2px 32px rgba(72,144,200,0.15), 0 1px 2px #7cc8e3;
-  animation: fadeFooter .8s ease-out 2s backwards;
-}
-@keyframes fadeFooter {
-  from {opacity: 0;}
-  to {opacity: 1;}
+.image-strip img:hover {
+  transform: translateY(-6px);
 }
 
-/*--- Responsive ---*/
-@media (max-width: 900px) {
-  .logo {font-size: 9vw;}
-  .subtitle {font-size: 4vw;}
-  .btn {font-size: 3vw;}
-  .slogan {font-size: 3vw;}
-  .faq-card h3 {font-size:3vw;}
-  .faq-card h4 {font-size:2vw;}
-  .faq-card p {font-size:2vw;}
-  .ending {font-size:2vw;}
-  .hero-content {padding:8vw 4vw;}
-}
-@media (max-width: 600px) {
-  .logo {font-size: 13vw;}
-  .subtitle {font-size: 6vw;}
-  .btn {font-size: 5vw;}
-  .slogan {font-size: 5vw;}
-  .faq-card {padding:6vw 3vw;}
-  .faq-card h3 {font-size:5vw;}
-  .faq-card h4 {font-size:3vw;}
-  .faq-card p {font-size:3vw;}
-  .ending {font-size:4vw;}
-  .hero-content {padding:10vw 3vw;}
-  .lizard-layer {width:70vw; height:70vw;}
+.faq {
+  margin: 70px auto;
+  max-width: 900px;
+  padding: 20px;
+  background: rgba(255,255,255,0.8);
+  border-radius: 20px;
+  border: 2px solid #000;
 }
 
-/*--- Extra Accessibility ---*/
-a:focus, .btn:focus {
-  outline: 2px solid #5cbfad !important;
-  outline-offset: 3px;
+.footer {
+  margin: 60px 0 20px;
+  font-size: 1.2rem;
+  color: #222;
 }
